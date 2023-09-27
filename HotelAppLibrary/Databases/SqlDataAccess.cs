@@ -16,7 +16,7 @@ namespace HotelAppLibrary.Databases
 
         public List<T> LoadData<T, U>(string sql, U parameters, string connectionStringName, bool isStoredProcedure = false)
         {
-            string? connectionString = _config.GetConnectionString(connectionStringName);
+            var connectionString = _config.GetConnectionString(connectionStringName);
             CommandType commandType = CommandType.Text;
 
             if (isStoredProcedure)
@@ -31,7 +31,7 @@ namespace HotelAppLibrary.Databases
 
         public void SaveData<T>(string sql, T parameters, string connectionStringName, bool isStoredProcedure = false)
         {
-            string? connectionString = _config.GetConnectionString(connectionStringName);
+            var connectionString = _config.GetConnectionString(connectionStringName);
             CommandType commandType = CommandType.Text;
 
             if (isStoredProcedure)
