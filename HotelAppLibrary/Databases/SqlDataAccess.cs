@@ -14,7 +14,7 @@ namespace HotelAppLibrary.Databases
             _config = config;
         }
 
-        public List<T> LoadData<T, U>(string sql, U parameters, string connectionStringName, bool isStoredProcedure = false)
+        public List<T> LoadData<T>(string sql, dynamic parameters, string connectionStringName, bool isStoredProcedure = false)
         {
             var connectionString = _config.GetConnectionString(connectionStringName);
             CommandType commandType = CommandType.Text;
